@@ -13,41 +13,40 @@ import {withRouter} from 'react-router'
 
 
 class Video extends  React.Component {
+
+
+
     constructor(){
         super();
         this.state = {
             loading: true
         }
     }
-
     changeLoading(){
         this.setState({
-            loading: false
+            loading: false,
+            to: '/SeparateVideo/'
         })
     }
-
-
-
+    goToOneVideo() {
+    }
    render() {
        const opts = {
-           height: '400pv',
-
+           height: '400px',
            width: '100%',
-
        };
-       return (
 
+       return (
                      <Card className="Card ">
                          <Col xs="flex" >
-                          <YouTube class="video" opts={opts} onReady={this.changeLoading.bind(this)} videoId={this.props.video.id}  />
+                          <YouTube class="video" opts={opts} onReady={this.changeLoading.bind(this)} videoId={this.props.video.id} />
                           {this.state.loading ?  <Progress animated color="warning" value={75} /> : null }
                            <h2>Title<span>{this.props.video.snippet.title}</span></h2>
                               <p >Description<span > {this.props.video.snippet.title}</span></p>
-                         <Link to="/SeparateVideo"> <Button color="danger" >on!</Button></Link>
+
+                             <Link  to={"/SeparateVideo/" + this.props.video.id} ><Button   color="danger" >on!{this.props.video.id}</Button></Link>
                          </Col>
                      </Card>
-
-
        )
    }
 }

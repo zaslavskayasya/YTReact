@@ -3,11 +3,8 @@
 }
 .Card{
     width: 350px;
-
     padding: 10px;
     margin: 10px;
-
-
 }
 
 .descriptionText {
@@ -20,4 +17,7 @@
 .headerContainer {
     padding: 20px 10px;
     text-align: center;
+}
+.FavoritesContainer {
+    padding: 100px 0px;
 }

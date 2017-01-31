@@ -1,9 +1,13 @@
 import React from 'react';
-import {  Link } from 'react-router'
+import {  Link } from 'react-router';
 import { Row , Col, Nav, NavItem, NavDropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 
 
 class MainPage extends React.Component {
+   /* componentDidMount(){
+        console.log(this.props.router);
+        this.props.router.push('/SeparateVideo')
+    }*/
     render(){
         return(
             <div className="container headerContainer" >
@@ -27,5 +31,9 @@ class MainPage extends React.Component {
         )
     }
 }
+
+/*MainPage.contextTypes = {
+    router: React.PropTypes.object.isRequired
+}*/
 
 export default MainPage;
